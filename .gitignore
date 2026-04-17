@@ -1,0 +1,24 @@
+# C# build output
+bin/
+obj/
+*.dll
+*.pdb
+
+# cTrader compiled bots
+*.algo
+
+# VS Code
+.vscode/
+
+# Secrets
+.env
+*.env.local
+
+# Python / Conda
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db

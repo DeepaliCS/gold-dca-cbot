@@ -1,0 +1,12 @@
+name: gold-dca
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pandas
+  - numpy
+  - matplotlib
+  - jupyter
+  - pip
+  - pip:
+      - python-dotenv
