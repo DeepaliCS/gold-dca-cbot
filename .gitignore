@@ -3,6 +3,7 @@ bin/
 obj/
 *.dll
 *.pdb
+*.exe
 
 # cTrader compiled bots
 *.algo
