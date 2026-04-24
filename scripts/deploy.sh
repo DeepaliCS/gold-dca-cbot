@@ -1,19 +1,17 @@
 #!/bin/bash
-# Deploys GoldDcaBot.cs from WSL repo → cTrader's Robots folder
-# Usage: ./scripts/deploy.sh
+# Usage: ./scripts/deploy.sh [bot-name]
+# Defaults to GoldDcaBot if no argument given
 
-SRC="$HOME/projects/gold-dca-cbot/src/GoldDcaBot/GoldDcaBot.cs"
-DEST_DIR="/mnt/c/Users/deepa/OneDrive/Documents/cAlgo/Sources/Robots/GoldDcaBot/GoldDcaBot"
-DEST="$DEST_DIR/GoldDcaBot.cs"
+BOT_NAME="${1:-GoldDcaBot}"
 
-# Check source exists
+SRC="$HOME/projects/gold-dca-cbot/src/$BOT_NAME/$BOT_NAME.cs"
+DEST_DIR="/mnt/c/Users/deepa/OneDrive/Documents/cAlgo/Sources/Robots/$BOT_NAME/$BOT_NAME"
+DEST="$DEST_DIR/$BOT_NAME.cs"
+
 if [ ! -f "$SRC" ]; then
-    echo "✗ Source file not found: $SRC"
+    echo "✗ Source not found: $SRC"
     exit 1
 fi
 
-# Ensure destination folder exists
 mkdir -p "$DEST_DIR"
-
-# Copy
-cp "$SRC" "$DEST" && echo "✓ Deployed at $(date +%H:%M:%S) → cTrader"
+cp "$SRC" "$DEST" && echo "✓ Deployed $BOT_NAME at $(date +%H:%M:%S)"
